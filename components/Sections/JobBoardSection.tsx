@@ -9,7 +9,11 @@ const JobBoardSection: React.FC = () => {
   return (
     <div style={{ background: "#ffffff", padding: "60px 50px" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <Row gutter={[48, 48]} align="middle">
+        <Row
+          gutter={[48, 48]}
+          align="middle"
+          style={{ flexDirection: "row-reverse" }}
+        >
           <Col xs={24} lg={10}>
             <img
               src="/images/mbr-2.jpg"
@@ -26,7 +30,7 @@ const JobBoardSection: React.FC = () => {
             <Title
               level={2}
               style={{
-                color: "#232323",
+                color: "#4479d9",
                 marginBottom: "24px",
                 fontSize: "48px",
                 fontWeight: 700,
@@ -40,7 +44,7 @@ const JobBoardSection: React.FC = () => {
             <Paragraph
               style={{
                 fontSize: "19.2px",
-                color: "#6b6763",
+                color: "#232323",
                 lineHeight: 1.5,
                 marginBottom: 0,
                 fontFamily: '"Roboto", sans-serif',

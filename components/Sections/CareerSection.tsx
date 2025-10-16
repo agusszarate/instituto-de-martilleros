@@ -30,7 +30,7 @@ const CareerSection: React.FC = () => {
               <Paragraph
                 style={{
                   fontSize: "19.2px",
-                  color: "#6b6763",
+                  color: "#232323",
                   lineHeight: 1.5,
                   marginBottom: "32px",
                   fontFamily: '"Roboto", sans-serif',

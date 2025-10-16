@@ -47,7 +47,7 @@ const RepresentativesSection: React.FC = () => {
                 style={{
                   fontSize: "19.2px",
                   lineHeight: 1.5,
-                  color: "#6b6763",
+                  color: "#232323",
                   textAlign: "left",
                   marginBottom: 0,
                   whiteSpace: "pre-line",

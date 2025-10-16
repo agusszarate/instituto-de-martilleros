@@ -176,7 +176,14 @@ export default function Home() {
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <Title
             level={3}
-            style={{ color: "#232323", marginBottom: "32px", fontWeight: 600 }}
+            style={{
+              color: "#4479d9",
+              marginBottom: "32px",
+              fontSize: "16px",
+              fontWeight: 700,
+              fontFamily: '"Montserrat", sans-serif',
+              lineHeight: 1.5,
+            }}
           >
             Estemos en contacto en nuestras redes sociales
           </Title>

@@ -42,7 +42,7 @@ const CampusSection: React.FC = () => {
               <Paragraph
                 style={{
                   fontSize: "19.2px",
-                  color: "#6b6763",
+                  color: "#232323",
                   lineHeight: 1.5,
                   marginBottom: "32px",
                   fontFamily: '"Roboto", sans-serif',
@@ -58,39 +58,57 @@ const CampusSection: React.FC = () => {
               >
                 <Button
                   size="large"
-                  icon={<LoginOutlined />}
                   href="#contacto"
                   style={{
                     height: "48px",
                     fontSize: "16px",
-                    fontWeight: 400,
+                    fontWeight: 600,
                     fontFamily: '"Montserrat", sans-serif',
                     paddingLeft: "32px",
                     paddingRight: "32px",
                     background: "#ff4d00",
                     borderColor: "#ff4d00",
                     color: "#ffffff",
-                    borderRadius: 0,
+                    borderRadius: "4px",
+                    boxShadow: "0 2px 2px 0 rgba(0, 0, 0, 0.2)",
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "#a83300";
+                    e.currentTarget.style.borderColor = "#a83300";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "#ff4d00";
+                    e.currentTarget.style.borderColor = "#ff4d00";
                   }}
                 >
                   INGRESAR
                 </Button>
                 <Button
                   size="large"
-                  icon={<GlobalOutlined />}
                   href="https://campus.jursoc.unlp.edu.ar/course/index.php?categoryid=136"
                   target="_blank"
                   style={{
                     height: "48px",
                     fontSize: "16px",
-                    fontWeight: 400,
+                    fontWeight: 600,
                     fontFamily: '"Montserrat", sans-serif',
                     paddingLeft: "32px",
                     paddingRight: "32px",
                     background: "#353535",
                     borderColor: "#353535",
                     color: "#ffffff",
-                    borderRadius: 0,
+                    borderRadius: "4px",
+                    boxShadow: "0 2px 2px 0 rgba(0, 0, 0, 0.2)",
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "#0a0a0a";
+                    e.currentTarget.style.borderColor = "#0a0a0a";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "#353535";
+                    e.currentTarget.style.borderColor = "#353535";
                   }}
                 >
                   CAMPUS JURSOC

@@ -24,7 +24,8 @@ const ContactSection: React.FC = () => {
               <Title
                 level={2}
                 style={{
-                  color: "#232323",
+                  color: "#4479d9",
+
                   textAlign: "center",
                   marginBottom: "48px",
                   fontSize: "48px",
@@ -98,20 +99,30 @@ const ContactSection: React.FC = () => {
 
                 <Form.Item style={{ textAlign: "center", marginBottom: 0 }}>
                   <Button
+                    // icon={<SendOutlined />}
                     htmlType="submit"
                     size="large"
-                    icon={<SendOutlined />}
                     style={{
                       height: "48px",
                       fontSize: "16px",
-                      fontWeight: 400,
+                      fontWeight: 600,
                       fontFamily: '"Montserrat", sans-serif',
                       background: "#ff4d00",
                       borderColor: "#ff4d00",
                       color: "#ffffff",
-                      borderRadius: 0,
+                      borderRadius: "4px",
+                      boxShadow: "0 2px 2px 0 rgba(0, 0, 0, 0.2)",
+                      transition: "all 0.3s ease",
                       paddingLeft: "48px",
                       paddingRight: "48px",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = "#a83300";
+                      e.currentTarget.style.borderColor = "#a83300";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = "#ff4d00";
+                      e.currentTarget.style.borderColor = "#ff4d00";
                     }}
                   >
                     Enviar mensaje
