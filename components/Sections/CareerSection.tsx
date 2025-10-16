@@ -8,7 +8,7 @@ const { Title, Paragraph } = Typography;
 
 const CareerSection: React.FC = () => {
   return (
-    <div style={{ background: "#ffffff", padding: "100px 50px" }}>
+    <div style={{ background: "#ffffff", padding: "60px 50px" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <Row gutter={[48, 48]} align="middle">
           <Col xs={24} lg={14}>
@@ -16,9 +16,9 @@ const CareerSection: React.FC = () => {
               <Title
                 level={2}
                 style={{
-                  color: "#232323",
+                  color: "#4479d9",
                   marginBottom: "24px",
-                  fontSize: "clamp(32px, 4vw, 48px)",
+                  fontSize: "48px",
                   fontWeight: 700,
                   fontFamily: '"Montserrat", sans-serif',
                   textTransform: "uppercase",
@@ -29,9 +29,9 @@ const CareerSection: React.FC = () => {
               </Title>
               <Paragraph
                 style={{
-                  fontSize: "18px",
-                  color: "#232323",
-                  lineHeight: "1.7",
+                  fontSize: "19.2px",
+                  color: "#6b6763",
+                  lineHeight: 1.5,
                   marginBottom: "32px",
                   fontFamily: '"Roboto", sans-serif',
                 }}
@@ -42,20 +42,27 @@ const CareerSection: React.FC = () => {
               </Paragraph>
               <Button
                 size="large"
-                icon={<RightOutlined />}
-                iconPosition="end"
                 href="#inscripciones"
                 style={{
+                  width: "274px",
                   height: "48px",
                   fontSize: "16px",
-                  fontWeight: 400,
+                  fontWeight: 600,
                   fontFamily: '"Montserrat", sans-serif',
-                  paddingLeft: "32px",
-                  paddingRight: "32px",
-                  background: "#ff4f38",
-                  borderColor: "#ff4f38",
+                  background: "#ff4d00",
+                  borderColor: "#ff4d00",
                   color: "#ffffff",
-                  borderRadius: 0,
+                  borderRadius: "4px",
+                  boxShadow: "0 2px 2px 0 rgba(0, 0, 0, 0.2)",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "#a83300";
+                  e.currentTarget.style.borderColor = "#a83300";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "#ff4d00";
+                  e.currentTarget.style.borderColor = "#ff4d00";
                 }}
               >
                 Información sobre la carrera

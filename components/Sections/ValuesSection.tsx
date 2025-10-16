@@ -15,7 +15,7 @@ const ValuesSection: React.FC = () => {
     {
       icon: (
         <SafetyOutlined
-          style={{ fontSize: "64px", color: "#232323", marginBottom: "20px" }}
+          style={{ fontSize: "80px", color: "#6592e6", marginBottom: "32px" }}
         />
       ),
       title: "VALORES",
@@ -25,7 +25,7 @@ const ValuesSection: React.FC = () => {
     {
       icon: (
         <BookOutlined
-          style={{ fontSize: "64px", color: "#232323", marginBottom: "20px" }}
+          style={{ fontSize: "80px", color: "#6592e6", marginBottom: "32px" }}
         />
       ),
       title: "ENSEÑANZA",
@@ -35,7 +35,7 @@ const ValuesSection: React.FC = () => {
     {
       icon: (
         <TrophyOutlined
-          style={{ fontSize: "64px", color: "#232323", marginBottom: "20px" }}
+          style={{ fontSize: "80px", color: "#6592e6", marginBottom: "32px" }}
         />
       ),
       title: "TÍTULO OFICIAL",
@@ -45,31 +45,31 @@ const ValuesSection: React.FC = () => {
   ];
 
   return (
-    <Row gutter={[48, 48]} justify="center">
+    <Row gutter={[24, 48]} justify="center">
       {values.map((value, index) => (
         <Col xs={24} sm={12} lg={8} key={index}>
-          <div style={{ textAlign: "center", padding: "0 20px" }}>
-            {value.icon}
+          <div style={{ textAlign: "center", padding: "0 10px" }}>
+            {/* {value.icon} */}
             <Title
-              level={2}
+              level={3}
               style={{
                 color: "#232323",
-                marginBottom: "60px",
-                fontSize: "clamp(32px, 4vw, 48px)",
+                marginBottom: "16px",
+                fontSize: "19.2px",
                 fontWeight: 700,
                 textAlign: "center",
-                fontFamily: '"Montserrat", sans-serif',
+                fontFamily: '"Roboto", sans-serif',
                 textTransform: "uppercase",
-                lineHeight: 1.1,
+                lineHeight: 1.5,
               }}
             >
               {value.title}
             </Title>
             <Paragraph
               style={{
-                fontSize: "16px",
-                lineHeight: "1.7",
-                color: "#232323",
+                fontSize: "19.2px",
+                lineHeight: 1.5,
+                color: "#6b6763",
                 textAlign: "center",
                 marginBottom: 0,
                 fontFamily: '"Roboto", sans-serif',

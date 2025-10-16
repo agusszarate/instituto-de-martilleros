@@ -16,7 +16,7 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <div style={{ background: "#f8f9fa", padding: "100px 50px" }}>
+    <div style={{ background: "#f8f9fa", padding: "60px 50px" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <Row justify="center">
           <Col xs={24} lg={16} xl={14}>
@@ -27,7 +27,7 @@ const ContactSection: React.FC = () => {
                   color: "#232323",
                   textAlign: "center",
                   marginBottom: "48px",
-                  fontSize: "clamp(32px, 4vw, 48px)",
+                  fontSize: "48px",
                   fontWeight: 700,
                   fontFamily: '"Montserrat", sans-serif',
                   textTransform: "uppercase",
@@ -106,8 +106,8 @@ const ContactSection: React.FC = () => {
                       fontSize: "16px",
                       fontWeight: 400,
                       fontFamily: '"Montserrat", sans-serif',
-                      background: "#ff4f38",
-                      borderColor: "#ff4f38",
+                      background: "#ff4d00",
+                      borderColor: "#ff4d00",
                       color: "#ffffff",
                       borderRadius: 0,
                       paddingLeft: "48px",

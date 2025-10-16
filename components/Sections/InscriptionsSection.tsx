@@ -15,7 +15,7 @@ const InscriptionsSection: React.FC = () => {
       style={{
         background:
           "linear-gradient(135deg, rgba(20, 157, 204, 0.9) 0%, rgba(41, 98, 137, 0.9) 100%)",
-        padding: "100px 50px",
+        padding: "60px 50px",
         margin: 0,
       }}
     >
@@ -27,7 +27,7 @@ const InscriptionsSection: React.FC = () => {
               color: "#ffffff",
               textAlign: "center",
               marginBottom: "32px",
-              fontSize: "clamp(32px, 4vw, 48px)",
+              fontSize: "48px",
               fontWeight: 700,
               fontFamily: '"Montserrat", sans-serif',
               textTransform: "uppercase",
@@ -38,9 +38,9 @@ const InscriptionsSection: React.FC = () => {
           </Title>
           <Paragraph
             style={{
-              fontSize: "18px",
+              fontSize: "19.2px",
               color: "#ffffff",
-              lineHeight: "1.7",
+              lineHeight: 1.5,
               textAlign: "center",
               marginBottom: "48px",
               fontFamily: '"Roboto", sans-serif',
@@ -58,12 +58,12 @@ const InscriptionsSection: React.FC = () => {
             style={{
               height: "48px",
               fontSize: "16px",
-              fontWeight: 700,
+              fontWeight: 400,
               paddingLeft: "32px",
               paddingRight: "32px",
-              background: "#ffffff",
-              borderColor: "#ffffff",
-              color: "#149dcc",
+              background: "#fafafa",
+              borderColor: "#fafafa",
+              color: "#7a7a7a",
               borderRadius: 0,
             }}
           >

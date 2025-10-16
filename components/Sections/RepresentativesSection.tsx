@@ -28,7 +28,7 @@ const RepresentativesSection: React.FC = () => {
         style={{
           color: "#232323",
           marginBottom: "60px",
-          fontSize: "clamp(32px, 4vw, 48px)",
+          fontSize: "48px",
           fontWeight: 700,
           textAlign: "center",
           fontFamily: '"Montserrat", sans-serif',
@@ -45,9 +45,9 @@ const RepresentativesSection: React.FC = () => {
             <div style={{ textAlign: "left" }}>
               <Paragraph
                 style={{
-                  fontSize: "16px",
-                  lineHeight: "1.7",
-                  color: "#232323",
+                  fontSize: "19.2px",
+                  lineHeight: 1.5,
+                  color: "#6b6763",
                   textAlign: "left",
                   marginBottom: 0,
                   whiteSpace: "pre-line",

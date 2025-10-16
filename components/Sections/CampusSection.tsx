@@ -8,7 +8,7 @@ const { Title, Paragraph } = Typography;
 
 const CampusSection: React.FC = () => {
   return (
-    <div style={{ background: "#f8f9fa", padding: "100px 50px" }}>
+    <div style={{ background: "#f8f9fa", padding: "60px 50px" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <Row gutter={[48, 48]} align="middle">
           <Col xs={24} lg={10}>
@@ -30,7 +30,7 @@ const CampusSection: React.FC = () => {
                 style={{
                   color: "#232323",
                   marginBottom: "24px",
-                  fontSize: "clamp(32px, 4vw, 48px)",
+                  fontSize: "48px",
                   fontWeight: 700,
                   fontFamily: '"Montserrat", sans-serif',
                   textTransform: "uppercase",
@@ -41,9 +41,9 @@ const CampusSection: React.FC = () => {
               </Title>
               <Paragraph
                 style={{
-                  fontSize: "18px",
-                  color: "#232323",
-                  lineHeight: "1.7",
+                  fontSize: "19.2px",
+                  color: "#6b6763",
+                  lineHeight: 1.5,
                   marginBottom: "32px",
                   fontFamily: '"Roboto", sans-serif',
                 }}
@@ -67,8 +67,8 @@ const CampusSection: React.FC = () => {
                     fontFamily: '"Montserrat", sans-serif',
                     paddingLeft: "32px",
                     paddingRight: "32px",
-                    background: "#ff4f38",
-                    borderColor: "#ff4f38",
+                    background: "#ff4d00",
+                    borderColor: "#ff4d00",
                     color: "#ffffff",
                     borderRadius: 0,
                   }}
@@ -87,8 +87,8 @@ const CampusSection: React.FC = () => {
                     fontFamily: '"Montserrat", sans-serif',
                     paddingLeft: "32px",
                     paddingRight: "32px",
-                    background: "#149dcc",
-                    borderColor: "#149dcc",
+                    background: "#353535",
+                    borderColor: "#353535",
                     color: "#ffffff",
                     borderRadius: 0,
                   }}

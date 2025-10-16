@@ -116,24 +116,26 @@ export default function Home() {
       {/* Nosotros Section */}
       <section
         id="nosotros"
-        style={{ padding: "100px 50px", background: "#ffffff" }}
+        style={{ padding: "60px 50px", background: "#ffffff" }}
       >
         <div style={{ maxWidth: "1200px", margin: "0 auto", width: "100%" }}>
           <Title
             level={2}
             style={{
               textAlign: "center",
-              color: "#232323",
+              color: "#4479d9",
               marginBottom: "60px",
-              fontSize: "clamp(32px, 4vw, 48px)",
+              fontSize: "48px",
               fontWeight: 700,
               textTransform: "uppercase",
+              fontFamily: '"Montserrat", sans-serif',
+              lineHeight: 1.1,
             }}
           >
             NOSOTROS
           </Title>
           <ValuesSection />
-          <div style={{ margin: "100px 0 60px" }} />
+          <div style={{ margin: "60px 0 40px" }} />
           <RepresentativesSection />
         </div>
       </section>
