@@ -20,8 +20,8 @@ export default function Home() {
       <section
         style={{
           background:
-            'linear-gradient(135deg, rgba(20, 157, 204, 0.85) 0%, rgba(41, 98, 137, 0.85) 100%), url("https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1920&q=80") center/cover no-repeat',
-          padding: "180px 50px 120px",
+            'url("/images/hero-background.jpg") center/cover no-repeat',
+          padding: "40px 50px 120px",
           minHeight: "100vh",
           display: "flex",
           alignItems: "center",
@@ -41,20 +41,20 @@ export default function Home() {
             <Col xs={24} lg={14}>
               <Space
                 direction="vertical"
-                size="large"
-                style={{ width: "100%" }}
+                size="small"
+                style={{ width: "100%", paddingLeft: "40px", gap: "18px" }}
               >
                 <Title
                   level={1}
                   style={{
                     color: "#ffffff",
-                    fontSize: "clamp(38px, 5vw, 62px)",
+                    fontSize: "clamp(30px, 4vw, 50px)",
                     fontWeight: 700,
                     margin: 0,
                     lineHeight: 1.1,
                     fontFamily: '"Montserrat", sans-serif',
                     textTransform: "uppercase",
-                    textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
+                    // textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
                   }}
                 >
                   INSTITUTO
@@ -68,9 +68,9 @@ export default function Home() {
                 <Paragraph
                   style={{
                     color: "#ffffff",
-                    fontSize: "clamp(18px, 2.5vw, 20px)",
-                    margin: "24px 0",
+                    fontSize: "clamp(18px, 2.5vw, 19px)",
                     lineHeight: 1.6,
+                    margin: 0,
                     fontFamily: '"Roboto", sans-serif',
                     textShadow: "1px 1px 2px rgba(0,0,0,0.3)",
                   }}
@@ -83,21 +83,29 @@ export default function Home() {
                   size="large"
                   href="https://isftmartilleroslp.edu.ar/assets/files/Planilla-deInscripcin2023.docx"
                   style={{
-                    height: "56px",
+                    width: "217px",
+                    height: "48px",
                     fontSize: "16px",
-                    fontWeight: 400,
+                    fontWeight: 600,
                     fontFamily: '"Montserrat", sans-serif',
                     textTransform: "uppercase",
-                    paddingLeft: "48px",
-                    paddingRight: "48px",
-                    marginTop: "16px",
-                    background: "#ff4f38",
-                    borderColor: "#ff4f38",
+                    background: "#ff4d00",
+                    borderColor: "#ff4d00",
                     color: "#ffffff",
-                    borderRadius: 0,
+                    borderRadius: "4px",
+                    boxShadow: "0 2px 2px 0 rgba(0, 0, 0, 0.2)",
+                    transition: "all 0.3s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "#a83300";
+                    e.currentTarget.style.borderColor = "#a83300";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "#ff4d00";
+                    e.currentTarget.style.borderColor = "#ff4d00";
                   }}
                 >
-                  INSCRIPCIONES 2023
+                  INSCRIPCIONES 2026
                 </Button>
               </Space>
             </Col>

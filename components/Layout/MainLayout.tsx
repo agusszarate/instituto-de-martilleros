@@ -41,7 +41,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
           zIndex: 1000,
           background: "#ffffff",
           padding: "0",
-          height: "90px",
+          height: "92.2px",
           boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
           borderBottom: "1px solid #efefef",
         }}
@@ -99,7 +99,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                     style={{
                       color: "#232323",
                       textDecoration: "none",
-                      fontWeight: 700,
+                      fontWeight: 500,
                       fontFamily: '"Montserrat", sans-serif',
                       fontSize: "16px",
                     }}
