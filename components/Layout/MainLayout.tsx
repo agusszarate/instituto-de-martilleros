@@ -176,27 +176,29 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
       <Content style={{ marginTop: "90px" }}>{children}</Content>
 
       {/* Footer */}
-      <AntFooter style={{ background: "#2e2e2e", padding: "80px 50px 30px" }}>
+      <AntFooter style={{ background: "#4479d9", padding: "45px 50px 75px" }}>
         <Row gutter={[48, 48]} justify="start">
-          <Col xs={24} sm={24} md={12} lg={8}>
+          <Col xs={24} sm={24} md={6} lg={6}>
             <Space direction="vertical" size="middle" style={{ width: "100%" }}>
               <Title
                 level={5}
                 style={{
                   color: "#ffffff",
-                  marginBottom: "16px",
+                  marginBottom: "8px",
                   fontWeight: 700,
-                  fontFamily: '"Montserrat", sans-serif',
+                  fontFamily: '"Roboto", sans-serif',
+                  fontSize: "19.2px",
                 }}
               >
                 Dirección
               </Title>
               <Paragraph
                 style={{
-                  color: "rgba(255,255,255,0.8)",
+                  color: "#ffffff",
                   marginBottom: "24px",
                   fontSize: "13px",
                   fontFamily: '"Open Sans", sans-serif',
+                  lineHeight: 1.5,
                 }}
               >
                 Avenida 1 N° 671 e/ 45 y 46
@@ -208,19 +210,22 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                 level={5}
                 style={{
                   color: "#ffffff",
-                  marginBottom: "16px",
+                  marginBottom: "8px",
+                  marginTop: "16px",
                   fontWeight: 700,
-                  fontFamily: '"Montserrat", sans-serif',
+                  fontFamily: '"Roboto", sans-serif',
+                  fontSize: "19.2px",
                 }}
               >
                 Contacto
               </Title>
               <Paragraph
                 style={{
-                  color: "rgba(255,255,255,0.8)",
-                  marginBottom: "24px",
+                  color: "#ffffff",
+                  marginBottom: "16px",
                   fontSize: "13px",
                   fontFamily: '"Open Sans", sans-serif',
+                  lineHeight: 1.5,
                 }}
               >
                 Email: info@isftmartilleroslp.edu.ar
@@ -234,43 +239,45 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                 level={5}
                 style={{
                   color: "#ffffff",
-                  marginBottom: "16px",
+                  marginBottom: "8px",
+                  marginTop: "16px",
                   fontWeight: 700,
-                  fontFamily: '"Montserrat", sans-serif',
+                  fontFamily: '"Roboto", sans-serif',
+                  fontSize: "19.2px",
                 }}
               >
                 Horario de atención
               </Title>
               <Paragraph
                 style={{
-                  color: "rgba(255,255,255,0.8)",
+                  color: "#ffffff",
                   marginBottom: 0,
                   fontSize: "13px",
                   fontFamily: '"Open Sans", sans-serif',
+                  lineHeight: 1.5,
                 }}
               >
-                Lunes a viernes de 8.00 a 12.00 hs
-                <br />y de 18.00 a 20.00 hs
+                Lunes a viernes de 8.00 a 12.00 hs y de 18.00 a 20.00 hs
               </Paragraph>
             </Space>
           </Col>
         </Row>
 
         <Row
-          justify="center"
+          justify="start"
           style={{
-            marginTop: "60px",
-            paddingTop: "30px",
-            borderTop: "1px solid rgba(255,255,255,0.1)",
+            marginTop: "16px",
+            paddingTop: "16px",
+            borderTop: "1px solid rgba(255,255,255,0.05)",
           }}
         >
           <Col>
             <Text
               style={{
-                color: "rgba(255,255,255,0.6)",
-                fontSize: "14px",
+                color: "#ffffff",
+                fontSize: "13px",
                 fontWeight: 700,
-                fontFamily: '"Montserrat", sans-serif',
+                fontFamily: '"Open Sans", sans-serif',
               }}
             >
               © Copyright 2022 ISFT - Todos los derechos reservados
