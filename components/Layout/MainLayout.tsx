@@ -91,7 +91,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                 INSTITUTO SUPERIOR DE FORMACIÓN TÉCNICA
               </Title>
             </a>
-          </Col>{" "}
+          </Col>
           {/* Desktop Menu */}
           <Col xs={0} md={10} lg={16}>
             <Menu
@@ -101,6 +101,13 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                 label: (
                   <a
                     href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const target = document.querySelector(item.href);
+                      if (target) {
+                        target.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
                     style={{
                       color: "#232323",
                       textDecoration: "none",
@@ -146,7 +153,17 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
           items={menuItems.map((item) => ({
             key: item.key,
             label: (
-              <a href={item.href} onClick={() => setDrawerVisible(false)}>
+              <a
+                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = document.querySelector(item.href);
+                  if (target) {
+                    target.scrollIntoView({ behavior: "smooth" });
+                  }
+                  setDrawerVisible(false);
+                }}
+              >
                 {item.label}
               </a>
             ),

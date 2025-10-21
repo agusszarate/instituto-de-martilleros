@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { ConfigProvider } from "antd";
 import { theme } from "@/theme/themeConfig";
 import StyledComponentsRegistry from "./AntdRegistry";
+import dynamic from "next/dynamic";
+
+const SmoothScroll = dynamic(() => import("@/components/SmoothScroll"), {
+  ssr: false,
+});
 
 export const metadata: Metadata = {
   title: "Instituto Superior de Formación Técnica - Colegio de Martilleros",
@@ -50,46 +55,13 @@ export default function RootLayout({
             }
           }
         `}</style>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                let isScrolling = false;
-                let velocity = 0;
-                let lastScrollY = 0;
-                let animationFrame;
-                
-                function smoothScroll() {
-                  if (Math.abs(velocity) > 0.5) {
-                    window.scrollBy(0, velocity);
-                    velocity *= 0.92;
-                    animationFrame = requestAnimationFrame(smoothScroll);
-                  } else {
-                    isScrolling = false;
-                    velocity = 0;
-                  }
-                }
-                
-                window.addEventListener('wheel', function(e) {
-                  if (e.target.closest('a[href^="#"]')) return;
-                  
-                  const delta = e.deltaY;
-                  velocity += delta * 0.35;
-                  
-                  if (!isScrolling) {
-                    isScrolling = true;
-                    if (animationFrame) cancelAnimationFrame(animationFrame);
-                    animationFrame = requestAnimationFrame(smoothScroll);
-                  }
-                }, { passive: true });
-              })();
-            `,
-          }}
-        />
       </head>
       <body style={{ margin: 0, padding: 0 }}>
         <StyledComponentsRegistry>
-          <ConfigProvider theme={theme}>{children}</ConfigProvider>
+          <ConfigProvider theme={theme}>
+            <SmoothScroll />
+            {children}
+          </ConfigProvider>
         </StyledComponentsRegistry>
       </body>
     </html>
