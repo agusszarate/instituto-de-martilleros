@@ -52,13 +52,18 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
           style={{ height: "100%", padding: "0 50px" }}
         >
           <Col xs={18} md={14} lg={8}>
-            <Link
-              href="/"
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
               style={{
                 textDecoration: "none",
                 display: "flex",
                 alignItems: "center",
                 gap: "16px",
+                cursor: "pointer",
               }}
             >
               <img
@@ -85,7 +90,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
               >
                 INSTITUTO SUPERIOR DE FORMACIÓN TÉCNICA
               </Title>
-            </Link>
+            </a>
           </Col>{" "}
           {/* Desktop Menu */}
           <Col xs={0} md={10} lg={16}>

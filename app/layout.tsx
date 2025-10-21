@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" style={{ scrollBehavior: "smooth" }}>
+    <html lang="es">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -39,6 +39,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link rel="icon" type="image/png" href="/images/logo-instituto-5.png" />
+        <style>{`
+          * {
+            scroll-behavior: smooth !important;
+          }
+        `}</style>
       </head>
       <body style={{ margin: 0, padding: 0 }}>
         <StyledComponentsRegistry>
