@@ -40,10 +40,52 @@ export default function RootLayout({
         />
         <link rel="icon" type="image/png" href="/images/logo-instituto-5.png" />
         <style>{`
-          * {
-            scroll-behavior: smooth !important;
+          html {
+            scroll-behavior: smooth;
+          }
+          
+          @media screen and (prefers-reduced-motion: no-preference) {
+            html {
+              scroll-behavior: auto;
+            }
           }
         `}</style>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                let isScrolling = false;
+                let velocity = 0;
+                let lastScrollY = 0;
+                let animationFrame;
+                
+                function smoothScroll() {
+                  if (Math.abs(velocity) > 0.5) {
+                    window.scrollBy(0, velocity);
+                    velocity *= 0.92;
+                    animationFrame = requestAnimationFrame(smoothScroll);
+                  } else {
+                    isScrolling = false;
+                    velocity = 0;
+                  }
+                }
+                
+                window.addEventListener('wheel', function(e) {
+                  if (e.target.closest('a[href^="#"]')) return;
+                  
+                  const delta = e.deltaY;
+                  velocity += delta * 0.35;
+                  
+                  if (!isScrolling) {
+                    isScrolling = true;
+                    if (animationFrame) cancelAnimationFrame(animationFrame);
+                    animationFrame = requestAnimationFrame(smoothScroll);
+                  }
+                }, { passive: true });
+              })();
+            `,
+          }}
+        />
       </head>
       <body style={{ margin: 0, padding: 0 }}>
         <StyledComponentsRegistry>
