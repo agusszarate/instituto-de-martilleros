@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - export PATH=/opt/cpanel/ea-nodejs22/bin:$PATH
+    - npm install
+    - npm run build
+    - export DEPLOYPATH=$HOME/public_html/preview.isftmartilleroslp.edu.ar
+    - /bin/cp -R out/* $DEPLOYPATH
