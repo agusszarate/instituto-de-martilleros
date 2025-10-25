@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Row, Col, Typography, Button, Space } from "antd";
-import { RightOutlined } from "@ant-design/icons";
 
 const { Title, Paragraph } = Typography;
 
@@ -42,7 +41,21 @@ const CareerSection: React.FC = () => {
               </Paragraph>
               <Button
                 size="large"
-                href="#inscripciones"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = document.querySelector("#inscripciones");
+                  if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition =
+                      elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: "smooth",
+                    });
+                  }
+                }}
                 style={{
                   width: "274px",
                   height: "48px",

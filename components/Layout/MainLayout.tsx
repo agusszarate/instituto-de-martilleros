@@ -1,18 +1,7 @@
 "use client";
 
 import React from "react";
-import {
-  Layout as AntLayout,
-  Row,
-  Col,
-  Menu,
-  Drawer,
-  Button,
-  Typography,
-  Space,
-} from "antd";
-import { MenuOutlined } from "@ant-design/icons";
-import Link from "next/link";
+import { Layout as AntLayout, Row, Col, Menu, Typography, Space } from "antd";
 
 const { Header: AntHeader, Content, Footer: AntFooter } = AntLayout;
 const { Title, Text, Paragraph } = Typography;
@@ -22,8 +11,6 @@ interface LayoutProps {
 }
 
 const MainLayout: React.FC<LayoutProps> = ({ children }) => {
-  const [drawerVisible, setDrawerVisible] = React.useState(false);
-
   const menuItems = [
     { key: "nosotros", label: "NOSOTROS", href: "#nosotros" },
     { key: "carrera", label: "LA CARRERA", href: "#carrera" },

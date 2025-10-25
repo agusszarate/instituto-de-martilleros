@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Row, Col, Typography, Button, Space } from "antd";
-import { DownloadOutlined } from "@ant-design/icons";
 
 const { Title, Paragraph } = Typography;
 
@@ -34,7 +33,7 @@ const InscriptionsSection: React.FC = () => {
               lineHeight: 1.1,
             }}
           >
-            ABIERTAS LAS INSCRIPCIONES 2026
+            ABIERTAS LAS INSCRIPCIONES
           </Title>
           <Paragraph
             className="inscriptions-text"
