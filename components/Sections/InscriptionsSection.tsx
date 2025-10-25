@@ -14,19 +14,20 @@ const InscriptionsSection: React.FC = () => {
       justify="center"
       style={{
         background: "#4479d9",
-        padding: "60px 50px",
+        padding: "40px 20px",
         margin: 0,
       }}
     >
-      <Col xs={24} md={16} lg={12} style={{ textAlign: "center" }}>
+      <Col xs={24} md={20} lg={16} xl={12} style={{ textAlign: "center" }}>
         <Space direction="vertical" size="large" style={{ width: "100%" }}>
           <Title
             level={2}
+            className="inscriptions-title"
             style={{
               color: "#ffffff",
               textAlign: "center",
-              marginBottom: "32px",
-              fontSize: "48px",
+              marginBottom: "24px",
+              fontSize: "32px",
               fontWeight: 700,
               fontFamily: '"Montserrat", sans-serif',
               textTransform: "uppercase",
@@ -36,12 +37,13 @@ const InscriptionsSection: React.FC = () => {
             ABIERTAS LAS INSCRIPCIONES 2026
           </Title>
           <Paragraph
+            className="inscriptions-text"
             style={{
-              fontSize: "19.2px",
+              fontSize: "16px",
               color: "#fafafa",
               lineHeight: 1.5,
               textAlign: "center",
-              marginBottom: "48px",
+              marginBottom: "32px",
               fontFamily: '"Roboto", sans-serif',
             }}
           >
@@ -51,15 +53,15 @@ const InscriptionsSection: React.FC = () => {
           </Paragraph>
           <Button
             size="large"
-            // icon={<DownloadOutlined />}
+            className="inscriptions-button"
             href="https://isftmartilleroslp.edu.ar/assets/files/ISFT-CARRERA2023.pdf"
             target="_blank"
             style={{
               height: "48px",
-              fontSize: "16px",
+              fontSize: "14px",
               fontWeight: 600,
-              paddingLeft: "32px",
-              paddingRight: "32px",
+              paddingLeft: "24px",
+              paddingRight: "24px",
               background: "#fafafa",
               borderColor: "#fafafa",
               color: "#7a7a7a",

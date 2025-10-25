@@ -41,7 +41,6 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
           zIndex: 1000,
           background: "#ffffff",
           padding: "0",
-          height: "92.2px",
           boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
           borderBottom: "1px solid #efefef",
         }}
@@ -49,9 +48,9 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
         <Row
           justify="space-between"
           align="middle"
-          style={{ height: "100%", padding: "0 50px" }}
+          style={{ height: "100%", padding: "0 20px" }}
         >
-          <Col xs={18} md={14} lg={8}>
+          <Col xs={24} sm={24} md={14} lg={8}>
             <a
               href="#"
               onClick={(e) => {
@@ -64,13 +63,14 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                 alignItems: "center",
                 gap: "16px",
                 cursor: "pointer",
+                justifyContent: "center",
               }}
             >
               <img
                 src="/images/logo-instituto-5.png"
                 alt="ISFT"
                 style={{
-                  height: "95px",
+                  height: "70px",
                   width: "auto",
                   flexShrink: 0,
                 }}
@@ -86,6 +86,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                   textTransform: "uppercase",
                   lineHeight: 1.5,
                   whiteSpace: "nowrap",
+                  display: "none",
                 }}
               >
                 INSTITUTO SUPERIOR DE FORMACIÓN TÉCNICA
@@ -128,52 +129,11 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
               }}
             />
           </Col>
-          {/* Mobile Menu Button */}
-          <Col xs={6} md={0} style={{ textAlign: "right" }}>
-            <Button
-              type="text"
-              icon={
-                <MenuOutlined style={{ fontSize: "24px", color: "#232323" }} />
-              }
-              onClick={() => setDrawerVisible(true)}
-            />
-          </Col>
         </Row>
       </AntHeader>
 
-      {/* Mobile Drawer */}
-      <Drawer
-        title="MENÚ"
-        placement="right"
-        onClose={() => setDrawerVisible(false)}
-        open={drawerVisible}
-      >
-        <Menu
-          mode="vertical"
-          items={menuItems.map((item) => ({
-            key: item.key,
-            label: (
-              <a
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  const target = document.querySelector(item.href);
-                  if (target) {
-                    target.scrollIntoView({ behavior: "smooth" });
-                  }
-                  setDrawerVisible(false);
-                }}
-              >
-                {item.label}
-              </a>
-            ),
-          }))}
-          style={{ border: "none" }}
-        />
-      </Drawer>
-
       {/* Content */}
-      <Content style={{ marginTop: "90px" }}>{children}</Content>
+      <Content style={{ marginTop: "80px" }}>{children}</Content>
 
       {/* Footer */}
       <AntFooter style={{ background: "#4479d9", padding: "45px 50px 75px" }}>

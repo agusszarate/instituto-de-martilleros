@@ -74,7 +74,6 @@ instituto-de-martilleros/
 │   │   └── MainLayout.tsx   # Layout con Header/Footer
 │   └── Sections/            # Componentes de secciones
 │       ├── ValuesSection.tsx
-│       ├── RepresentativesSection.tsx
 │       ├── CareerSection.tsx
 │       ├── CampusSection.tsx
 │       ├── InscriptionsSection.tsx

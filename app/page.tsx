@@ -4,7 +4,6 @@ import React from "react";
 import { Typography, Space, Row, Col, Button } from "antd";
 import MainLayout from "@/components/Layout/MainLayout";
 import ValuesSection from "@/components/Sections/ValuesSection";
-import RepresentativesSection from "@/components/Sections/RepresentativesSection";
 import CareerSection from "@/components/Sections/CareerSection";
 import CampusSection from "@/components/Sections/CampusSection";
 import InscriptionsSection from "@/components/Sections/InscriptionsSection";
@@ -135,8 +134,6 @@ export default function Home() {
             NOSOTROS
           </Title>
           <ValuesSection />
-          <div style={{ margin: "60px 0 40px" }} />
-          <RepresentativesSection />
         </div>
       </section>
 
