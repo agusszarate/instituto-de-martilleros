@@ -53,7 +53,7 @@ const InscriptionsSection: React.FC = () => {
           <Button
             size="large"
             className="inscriptions-button"
-            href="https://isftmartilleroslp.edu.ar/assets/files/ISFT-CARRERA2023.pdf"
+            href="/ISFT-CARRERA.pdf"
             target="_blank"
             style={{
               height: "48px",
