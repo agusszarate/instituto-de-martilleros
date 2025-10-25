@@ -1,0 +1,53 @@
+name: Deploy Next.js to cPanel (UAT & PROD)
+
+on:
+  push:
+    branches:
+      - uat # Se activa con 'git push' a la rama 'uat'
+      - main # O con 'git push' a la rama 'main'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Set Deploy Variables
+        id: set_vars
+        run: |
+          if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+            echo "FTP_USERNAME=${{ secrets.FTP_USERNAME_PROD }}" >> $GITHUB_OUTPUT
+            echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD_PROD }}" >> $GITHUB_OUTPUT
+            echo "EXCLUDE_RULES=preview/**,cgi-bin/**" >> $GITHUB_OUTPUT
+          elif [ "${{ github.ref }}" == "refs/heads/uat" ]; then
+            echo "FTP_USERNAME=${{ secrets.FTP_USERNAME_UAT }}" >> $GITHUB_OUTPUT
+            echo "FTP_PASSWORD=${{ secrets.FTP_PASSWORD_UAT }}" >> $GITHUB_OUTPUT
+            echo "EXCLUDE_RULES=" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+
+          username: ${{ steps.set_vars.outputs.FTP_USERNAME }}
+          password: ${{ steps.set_vars.outputs.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: ./
+          clean: true
+
+          exclude: ${{ steps.set_vars.outputs.EXCLUDE_RULES }}

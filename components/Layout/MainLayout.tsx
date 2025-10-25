@@ -1,18 +1,7 @@
 "use client";
 
 import React from "react";
-import {
-  Layout as AntLayout,
-  Row,
-  Col,
-  Menu,
-  Drawer,
-  Button,
-  Typography,
-  Space,
-} from "antd";
-import { MenuOutlined } from "@ant-design/icons";
-import Link from "next/link";
+import { Layout as AntLayout, Row, Col, Menu, Typography, Space } from "antd";
 
 const { Header: AntHeader, Content, Footer: AntFooter } = AntLayout;
 const { Title, Text, Paragraph } = Typography;
@@ -22,8 +11,6 @@ interface LayoutProps {
 }
 
 const MainLayout: React.FC<LayoutProps> = ({ children }) => {
-  const [drawerVisible, setDrawerVisible] = React.useState(false);
-
   const menuItems = [
     { key: "nosotros", label: "NOSOTROS", href: "#nosotros" },
     { key: "carrera", label: "LA CARRERA", href: "#carrera" },
@@ -41,7 +28,6 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
           zIndex: 1000,
           background: "#ffffff",
           padding: "0",
-          height: "92.2px",
           boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
           borderBottom: "1px solid #efefef",
         }}
@@ -49,9 +35,9 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
         <Row
           justify="space-between"
           align="middle"
-          style={{ height: "100%", padding: "0 50px" }}
+          style={{ height: "100%", padding: "0 20px" }}
         >
-          <Col xs={18} md={14} lg={8}>
+          <Col xs={24} sm={24} md={12} lg={7}>
             <a
               href="#"
               onClick={(e) => {
@@ -64,13 +50,14 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                 alignItems: "center",
                 gap: "16px",
                 cursor: "pointer",
+                justifyContent: "center",
               }}
             >
               <img
                 src="/images/logo-instituto-5.png"
                 alt="ISFT"
                 style={{
-                  height: "95px",
+                  height: "70px",
                   width: "auto",
                   flexShrink: 0,
                 }}
@@ -86,6 +73,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                   textTransform: "uppercase",
                   lineHeight: 1.5,
                   whiteSpace: "nowrap",
+                  display: "none",
                 }}
               >
                 INSTITUTO SUPERIOR DE FORMACIÓN TÉCNICA
@@ -93,7 +81,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
             </a>
           </Col>
           {/* Desktop Menu */}
-          <Col xs={0} md={10} lg={16}>
+          <Col xs={0} md={12} lg={17}>
             <Menu
               mode="horizontal"
               items={menuItems.map((item) => ({
@@ -128,150 +116,131 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
               }}
             />
           </Col>
-          {/* Mobile Menu Button */}
-          <Col xs={6} md={0} style={{ textAlign: "right" }}>
-            <Button
-              type="text"
-              icon={
-                <MenuOutlined style={{ fontSize: "24px", color: "#232323" }} />
-              }
-              onClick={() => setDrawerVisible(true)}
-            />
-          </Col>
         </Row>
       </AntHeader>
 
-      {/* Mobile Drawer */}
-      <Drawer
-        title="MENÚ"
-        placement="right"
-        onClose={() => setDrawerVisible(false)}
-        open={drawerVisible}
-      >
-        <Menu
-          mode="vertical"
-          items={menuItems.map((item) => ({
-            key: item.key,
-            label: (
-              <a
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  const target = document.querySelector(item.href);
-                  if (target) {
-                    target.scrollIntoView({ behavior: "smooth" });
-                  }
-                  setDrawerVisible(false);
-                }}
-              >
-                {item.label}
-              </a>
-            ),
-          }))}
-          style={{ border: "none" }}
-        />
-      </Drawer>
-
       {/* Content */}
-      <Content style={{ marginTop: "90px" }}>{children}</Content>
+      <Content style={{ marginTop: "80px" }}>{children}</Content>
 
       {/* Footer */}
-      <AntFooter style={{ background: "#4479d9", padding: "45px 50px 75px" }}>
-        <Row gutter={[48, 48]} justify="start">
-          <Col xs={24} sm={24} md={6} lg={6}>
-            <Space direction="vertical" size="middle" style={{ width: "100%" }}>
-              <Title
-                level={5}
-                style={{
-                  color: "#ffffff",
-                  marginBottom: "8px",
-                  fontWeight: 700,
-                  fontFamily: '"Roboto", sans-serif',
-                  fontSize: "19.2px",
-                }}
-              >
-                Dirección
-              </Title>
-              <Paragraph
-                style={{
-                  color: "#ffffff",
-                  marginBottom: "24px",
-                  fontSize: "13px",
-                  fontFamily: '"Open Sans", sans-serif',
-                  lineHeight: 1.5,
-                }}
-              >
-                Avenida 1 N° 671 e/ 45 y 46
-                <br />
-                La Plata, Buenos Aires
-              </Paragraph>
+      <AntFooter style={{ background: "#4479d9" }}>
+        <Row gutter={[32, 32]} justify="center">
+          <Col xs={24} sm={24} md={20} lg={18} xl={16}>
+            <Row gutter={[32, 32]}>
+              <Col xs={24} sm={12} md={8}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: "100%" }}
+                >
+                  <Title
+                    level={5}
+                    style={{
+                      color: "#ffffff",
+                      marginBottom: "12px",
+                      fontWeight: 700,
+                      fontFamily: '"Roboto", sans-serif',
+                      fontSize: "19.2px",
+                    }}
+                  >
+                    Dirección
+                  </Title>
+                  <Paragraph
+                    style={{
+                      color: "#ffffff",
+                      marginBottom: 0,
+                      fontSize: "13px",
+                      fontFamily: '"Open Sans", sans-serif',
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    Avenida 1 N° 671 e/ 45 y 46
+                    <br />
+                    La Plata, Buenos Aires
+                  </Paragraph>
+                </Space>
+              </Col>
 
-              <Title
-                level={5}
-                style={{
-                  color: "#ffffff",
-                  marginBottom: "8px",
-                  marginTop: "16px",
-                  fontWeight: 700,
-                  fontFamily: '"Roboto", sans-serif',
-                  fontSize: "19.2px",
-                }}
-              >
-                Contacto
-              </Title>
-              <Paragraph
-                style={{
-                  color: "#ffffff",
-                  marginBottom: "16px",
-                  fontSize: "13px",
-                  fontFamily: '"Open Sans", sans-serif',
-                  lineHeight: 1.5,
-                }}
-              >
-                Email: info@isftmartilleroslp.edu.ar
-                <br />
-                Teléfono: (0221) 489-5604
-                <br />
-                Whatsapp: 2214895604
-              </Paragraph>
+              <Col xs={24} sm={12} md={8}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: "100%" }}
+                >
+                  <Title
+                    level={5}
+                    style={{
+                      color: "#ffffff",
+                      marginBottom: "12px",
+                      fontWeight: 700,
+                      fontFamily: '"Roboto", sans-serif',
+                      fontSize: "19.2px",
+                    }}
+                  >
+                    Contacto
+                  </Title>
+                  <Paragraph
+                    style={{
+                      color: "#ffffff",
+                      marginBottom: 0,
+                      fontSize: "13px",
+                      fontFamily: '"Open Sans", sans-serif',
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    Email: info@isftmartilleroslp.edu.ar
+                    <br />
+                    Teléfono: (0221) 489-5604
+                    <br />
+                    Whatsapp: 2214895604
+                  </Paragraph>
+                </Space>
+              </Col>
 
-              <Title
-                level={5}
-                style={{
-                  color: "#ffffff",
-                  marginBottom: "8px",
-                  marginTop: "16px",
-                  fontWeight: 700,
-                  fontFamily: '"Roboto", sans-serif',
-                  fontSize: "19.2px",
-                }}
-              >
-                Horario de atención
-              </Title>
-              <Paragraph
-                style={{
-                  color: "#ffffff",
-                  marginBottom: 0,
-                  fontSize: "13px",
-                  fontFamily: '"Open Sans", sans-serif',
-                  lineHeight: 1.5,
-                }}
-              >
-                Lunes a viernes de 8.00 a 12.00 hs y de 18.00 a 20.00 hs
-              </Paragraph>
-            </Space>
+              <Col xs={24} sm={12} md={8}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: "100%" }}
+                >
+                  <Title
+                    level={5}
+                    style={{
+                      color: "#ffffff",
+                      marginBottom: "12px",
+                      fontWeight: 700,
+                      fontFamily: '"Roboto", sans-serif',
+                      fontSize: "19.2px",
+                    }}
+                  >
+                    Horario de atención
+                  </Title>
+                  <Paragraph
+                    style={{
+                      color: "#ffffff",
+                      marginBottom: 0,
+                      fontSize: "13px",
+                      fontFamily: '"Open Sans", sans-serif',
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    Lunes a viernes de 8.00 a 12.00 hs y de 18.00 a 20.00 hs
+                  </Paragraph>
+                </Space>
+              </Col>
+            </Row>
           </Col>
         </Row>
 
         <Row
-          justify="start"
+          justify="center"
           style={{
-            marginTop: "16px",
-            paddingTop: "16px",
-            borderTop: "1px solid rgba(255,255,255,0.05)",
+            marginTop: "40px",
+            paddingTop: "24px",
+            borderTop: "1px solid rgba(255,255,255,0.15)",
           }}
         >
-          <Col>
+          <Col xs={24} style={{ textAlign: "center" }}>
             <Text
               style={{
                 color: "#ffffff",
@@ -280,7 +249,8 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                 fontFamily: '"Open Sans", sans-serif',
               }}
             >
-              © Copyright 2022 ISFT - Todos los derechos reservados
+              © Copyright {new Date().getFullYear()} ISFT - Todos los derechos
+              reservados
             </Text>
           </Col>
         </Row>
