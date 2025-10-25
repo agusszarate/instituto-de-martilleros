@@ -22,19 +22,6 @@ npm run dev
 # → http://localhost:3000
 ```
 
-## 📚 Documentación Completa
-
-Toda la documentación está organizada en la carpeta `documentacion/`:
-
-| Documento                                                                | Descripción                                  |
-| ------------------------------------------------------------------------ | -------------------------------------------- |
-| **[📑 Índice General](./documentacion/INDICE_DOCUMENTACION.md)**         | Navegación completa de toda la documentación |
-| **[⚡ Quick Start](./documentacion/QUICK_START.md)**                     | Configuración rápida en 5 minutos            |
-| **[🔧 Documentación Técnica](./documentacion/DOCUMENTACION_TECNICA.md)** | Arquitectura, decisiones técnicas y patrones |
-| **[🚀 Deployment](./documentacion/DEPLOYMENT.md)**                       | Guía completa de despliegue                  |
-| **[✅ Proyecto Completado](./documentacion/PROYECTO_COMPLETADO.md)**     | Checklist y resumen ejecutivo                |
-| **[🎯 Mejoras Futuras](./documentacion/MEJORAS_FUTURAS.md)**             | Roadmap de funcionalidades                   |
-
 ## 🚀 Stack Tecnológico
 
 - **Framework**: Next.js 14+ (App Router)
@@ -84,13 +71,6 @@ instituto-de-martilleros/
 ├── public/
 │   ├── robots.txt
 │   └── sitemap.xml
-├── documentacion/           # 📚 Documentación completa
-│   ├── INDICE_DOCUMENTACION.md
-│   ├── QUICK_START.md
-│   ├── DOCUMENTACION_TECNICA.md
-│   ├── DEPLOYMENT.md
-│   ├── PROYECTO_COMPLETADO.md
-│   └── MEJORAS_FUTURAS.md
 ├── next.config.js
 ├── tsconfig.json
 └── package.json
@@ -112,7 +92,7 @@ instituto-de-martilleros/
 3. **Representantes Legales** - Autoridades del instituto
 4. **Carrera** - Información de Martillero Público
 5. **Campus Virtual** - Acceso a material de estudio
-6. **Inscripciones 2023** - Info y descarga de documentación
+6. **Inscripciones** - Info y descarga de documentación
 7. **Bolsa de Trabajo** - Oportunidades para alumnos
 8. **Contacto** - Formulario y datos de contacto
 9. **Footer** - Información completa del instituto
@@ -159,8 +139,6 @@ El sitio se generará en la carpeta `/out` listo para deploy.
 - **Vercel** - Gratis
 - **Hosting tradicional** - FTP/cPanel
 
-Ver guía completa en [documentacion/DEPLOYMENT.md](./documentacion/DEPLOYMENT.md)
-
 ## 🌐 Sitio Original
 
 - **URL**: https://isftmartilleroslp.edu.ar/
@@ -183,7 +161,7 @@ Este es un proyecto privado del Instituto Superior de Formación Técnica. Para 
 
 ## 📄 Licencia
 
-© 2022 ISFT - Todos los derechos reservados
+© 2025 ISFT - Todos los derechos reservados
 
 ---
 
