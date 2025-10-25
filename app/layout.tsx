@@ -89,11 +89,33 @@ export default function RootLayout({
             }
             
             .ant-layout-header .ant-row {
-              padding: 0 50px !important;
+              padding: 0 30px !important;
             }
             
             .ant-layout-header a {
               justify-content: flex-start !important;
+            }
+          }
+          
+          @media (min-width: 1200px) {
+            .ant-layout-header .ant-row {
+              padding: 0 50px !important;
+            }
+          }
+          
+          .ant-layout-footer {
+            padding: 40px 20px 60px !important;
+          }
+          
+          @media (min-width: 768px) {
+            .ant-layout-footer {
+              padding: 50px 40px 70px !important;
+            }
+          }
+          
+          @media (min-width: 1200px) {
+            .ant-layout-footer {
+              padding: 60px 50px 80px !important;
             }
           }
           
