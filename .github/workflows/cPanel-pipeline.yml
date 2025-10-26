@@ -32,7 +32,7 @@ jobs:
             echo "DEPLOY_PATH=./" >> $GITHUB_OUTPUT
             echo "EXCLUDE_RULES=preview.isftmartilleroslp.edu.ar/**,cgi-bin/**" >> $GITHUB_OUTPUT
           elif [ "${{ github.ref }}" == "refs/heads/uat" ]; then
-            echo "DEPLOY_PATH=./preview" >> $GITHUB_OUTPUT
+            echo "DEPLOY_PATH=./preview/" >> $GITHUB_OUTPUT
             echo "EXCLUDE_RULES=cgi-bin/**" >> $GITHUB_OUTPUT
           fi
       - name: Deploy to cPanel via FTP
