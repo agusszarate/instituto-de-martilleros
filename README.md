@@ -131,38 +131,3 @@ npm run build
 ```
 
 El sitio se generará en la carpeta `/out` listo para deploy.
-
-### Opciones de Hosting
-
-- **GitHub Pages** - Gratis
-- **Netlify** - Gratis
-- **Vercel** - Gratis
-- **Hosting tradicional** - FTP/cPanel
-
-## 🌐 Sitio Original
-
-- **URL**: https://isftmartilleroslp.edu.ar/
-- **Tipo**: Mobirise Website Builder
-- **Recreado con**: Next.js + TypeScript + Ant Design
-
-## 📞 Información de Contacto
-
-**Instituto Superior de Formación Técnica**
-
-- **Dirección**: Avenida 1 N° 671 e/ 45 y 46, La Plata, Buenos Aires
-- **Email**: info@isftmartilleroslp.edu.ar
-- **Teléfono**: (0221) 489-5604
-- **WhatsApp**: 2214895604
-- **Horario**: Lunes a viernes de 8:00 a 12:00 hs y de 18:00 a 20:00 hs
-
-## 🤝 Contribuir
-
-Este es un proyecto privado del Instituto Superior de Formación Técnica. Para cambios o sugerencias, contactar a las autoridades del instituto.
-
-## 📄 Licencia
-
-© 2025 ISFT - Todos los derechos reservados
-
----
-
-**Desarrollado con** ❤️ **usando Next.js, TypeScript y Ant Design**
