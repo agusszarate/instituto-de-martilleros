@@ -14,7 +14,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
   const menuItems = [
     { key: "nosotros", label: "NOSOTROS", href: "#nosotros" },
     { key: "carrera", label: "LA CARRERA", href: "#carrera" },
-    { key: "contacto", label: "CONTACTO", href: "#contacto" },
+    { key: "inscripciones", label: "INSCRIPCIONES", href: "#contacto" },
   ];
 
   return (

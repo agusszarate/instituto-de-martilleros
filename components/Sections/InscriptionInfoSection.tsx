@@ -5,7 +5,7 @@ import { Row, Col, Typography, Button, Space } from "antd";
 
 const { Title, Paragraph } = Typography;
 
-const InscriptionsSection: React.FC = () => {
+const InscriptionInfoSection: React.FC = () => {
   return (
     <Row
       gutter={[48, 48]}
@@ -46,7 +46,7 @@ const InscriptionsSection: React.FC = () => {
               fontFamily: '"Roboto", sans-serif',
             }}
           >
-            Podés descarte el PDF que contiene todo el material que necesitas
+            Podés descargarte el PDF que contiene todo el material que necesitas
             para la inscripción: Plan de estudios, horarios de cursada,
             condiciones de ingreso e inscripción y datos de contacto.
           </Paragraph>
@@ -88,4 +88,4 @@ const InscriptionsSection: React.FC = () => {
   );
 };
 
-export default InscriptionsSection;
+export default InscriptionInfoSection;

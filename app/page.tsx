@@ -6,9 +6,9 @@ import MainLayout from "@/components/Layout/MainLayout";
 import ValuesSection from "@/components/Sections/ValuesSection";
 import CareerSection from "@/components/Sections/CareerSection";
 import CampusSection from "@/components/Sections/CampusSection";
-import InscriptionsSection from "@/components/Sections/InscriptionsSection";
+import InscriptionInfoSection from "@/components/Sections/InscriptionInfoSection";
 import JobBoardSection from "@/components/Sections/JobBoardSection";
-import ContactSection from "@/components/Sections/ContactSection";
+import InscriptionFormSection from "@/components/Sections/InscriptionFormSection";
 
 const { Title, Paragraph } = Typography;
 
@@ -163,9 +163,9 @@ export default function Home() {
         <CampusSection />
       </section>
 
-      {/* Inscripciones Section */}
+      {/* Inscripciones Info Section */}
       <section id="inscripciones">
-        <InscriptionsSection />
+        <InscriptionInfoSection />
       </section>
 
       {/* Bolsa de Trabajo Section */}
@@ -173,9 +173,9 @@ export default function Home() {
         <JobBoardSection />
       </section>
 
-      {/* Contacto Section */}
+      {/* Inscription Form Section */}
       <section id="contacto">
-        <ContactSection />
+        <InscriptionFormSection />
       </section>
 
       {/* Redes Sociales Section */}
