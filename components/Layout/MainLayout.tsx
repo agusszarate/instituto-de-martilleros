@@ -188,7 +188,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                       lineHeight: 1.6,
                     }}
                   >
-                    Email: info@isftmartilleroslp.edu.ar
+                    Email: inscripciones@isftmartilleroslp.edu.ar
                     <br />
                     Teléfono: (0221) 489-5604
                     <br />

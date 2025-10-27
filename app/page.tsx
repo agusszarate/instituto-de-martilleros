@@ -198,7 +198,7 @@ export default function Home() {
               lineHeight: 1.5,
             }}
           >
-            Estemos en contacto en nuestras redes sociales
+            Estemos en contacto - inscripciones@isftmartilleroslp.edu.ar
           </Title>
         </div>
       </section>
