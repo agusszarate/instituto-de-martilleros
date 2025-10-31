@@ -6,7 +6,6 @@ import MainLayout from "@/components/Layout/MainLayout";
 import ValuesSection from "@/components/Sections/ValuesSection";
 import CareerSection from "@/components/Sections/CareerSection";
 import CampusSection from "@/components/Sections/CampusSection";
-import InscriptionInfoSection from "@/components/Sections/InscriptionInfoSection";
 import JobBoardSection from "@/components/Sections/JobBoardSection";
 import InscriptionFormSection from "@/components/Sections/InscriptionFormSection";
 
@@ -161,11 +160,6 @@ export default function Home() {
       {/* Campus Section */}
       <section id="campus">
         <CampusSection />
-      </section>
-
-      {/* Inscripciones Info Section */}
-      <section id="inscripciones">
-        <InscriptionInfoSection />
       </section>
 
       {/* Bolsa de Trabajo Section */}

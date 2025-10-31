@@ -41,21 +41,8 @@ const CareerSection: React.FC = () => {
               </Paragraph>
               <Button
                 size="large"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const target = document.querySelector("#inscripciones");
-                  if (target) {
-                    const headerOffset = 80;
-                    const elementPosition = target.getBoundingClientRect().top;
-                    const offsetPosition =
-                      elementPosition + window.pageYOffset - headerOffset;
-
-                    window.scrollTo({
-                      top: offsetPosition,
-                      behavior: "smooth",
-                    });
-                  }
-                }}
+                href="/ISFT-CARRERA.pdf"
+                target="_blank"
                 style={{
                   width: "274px",
                   height: "48px",

@@ -190,9 +190,26 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                   >
                     Email: inscripciones@isftmartilleroslp.edu.ar
                     <br />
-                    Teléfono: (0221) 489-5604
-                    <br />
-                    Whatsapp: 2214895604
+                    WhatsApp:{" "}
+                    <a
+                      href="https://wa.me/542214895604"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: "#ffffff",
+                        textDecoration: "none",
+                        borderBottom: "1px solid transparent",
+                        transition: "border-bottom 0.2s ease",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderBottom = "1px solid #ffffff";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderBottom = "1px solid transparent";
+                      }}
+                    >
+                      221-489-5604
+                    </a>
                   </Paragraph>
                 </Space>
               </Col>
