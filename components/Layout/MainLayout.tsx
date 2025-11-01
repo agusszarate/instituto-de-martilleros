@@ -11,6 +11,8 @@ interface LayoutProps {
 }
 
 const MainLayout: React.FC<LayoutProps> = ({ children }) => {
+  const HEADER_HEIGHT = 100;
+
   const menuItems = [
     { key: "nosotros", label: "NOSOTROS", href: "#nosotros" },
     { key: "carrera", label: "LA CARRERA", href: "#carrera" },
@@ -94,7 +96,14 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                       e.preventDefault();
                       const target = document.querySelector(item.href);
                       if (target) {
-                        target.scrollIntoView({ behavior: "smooth" });
+                        const targetPosition =
+                          target.getBoundingClientRect().top +
+                          window.pageYOffset -
+                          HEADER_HEIGHT;
+                        window.scrollTo({
+                          top: targetPosition,
+                          behavior: "smooth",
+                        });
                       }
                     }}
                     style={{
@@ -113,7 +122,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                 background: "transparent",
                 borderBottom: "none",
                 justifyContent: "flex-end",
-                lineHeight: "100px",
+                lineHeight: String(HEADER_HEIGHT) + "px",
               }}
             />
           </Col>
@@ -201,6 +210,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                         textDecoration: "none",
                         borderBottom: "1px solid transparent",
                         transition: "border-bottom 0.2s ease",
+                        whiteSpace: "nowrap",
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.borderBottom =

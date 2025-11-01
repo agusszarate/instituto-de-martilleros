@@ -75,7 +75,8 @@ export default function Home() {
                 >
                   Colegio de Martilleros y Corredores Públicos
                   <br />
-                  Departamento Judicial La Plata.
+                  Departamento Judicial{" "}
+                  <span style={{ whiteSpace: "nowrap" }}>La Plata.</span>
                 </Paragraph>
                 <Button
                   size="large"
