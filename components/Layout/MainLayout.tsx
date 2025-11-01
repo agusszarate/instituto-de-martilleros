@@ -237,7 +237,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                     <br />
                     Facebook:{" "}
                     <a
-                      href="https://www.facebook.com/ISFTColegiodemartilleros"
+                      href="https://www.facebook.com/carrerademartillerosenlaplata"
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
