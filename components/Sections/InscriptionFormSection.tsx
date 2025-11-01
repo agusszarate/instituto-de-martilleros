@@ -133,6 +133,7 @@ const InscriptionFormSection: React.FC = () => {
                     color: "#4479d9",
                     fontWeight: 600,
                     textDecoration: "none",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   221-489-5604
