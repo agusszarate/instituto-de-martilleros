@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Row, Col, Typography, Button, Space } from "antd";
-import { LoginOutlined, GlobalOutlined } from "@ant-design/icons";
 
 const { Title, Paragraph } = Typography;
 
@@ -56,9 +55,8 @@ const CampusSection: React.FC = () => {
                 size="middle"
                 style={{ flexWrap: "wrap" }}
               >
-                <Button
+                {/* <Button
                   size="large"
-                  href="#contacto"
                   style={{
                     height: "48px",
                     fontSize: "16px",
@@ -83,7 +81,7 @@ const CampusSection: React.FC = () => {
                   }}
                 >
                   INGRESAR
-                </Button>
+                </Button> */}
                 <Button
                   size="large"
                   href="https://campus.jursoc.unlp.edu.ar/course/index.php?categoryid=136"

@@ -1,0 +1,47 @@
+name: Deploy Next.js to cPanel (UAT & PROD)
+
+on:
+  push:
+    branches:
+      - uat
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run build
+      - name: Set Deploy Variables
+        id: set_vars
+        run: |
+          if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+            echo "DEPLOY_PATH=./" >> $GITHUB_OUTPUT
+            echo "EXCLUDE_RULES=preview.isftmartilleroslp.edu.ar/**,cgi-bin/**" >> $GITHUB_OUTPUT
+          elif [ "${{ github.ref }}" == "refs/heads/uat" ]; then
+            echo "DEPLOY_PATH=./preview/" >> $GITHUB_OUTPUT
+            echo "EXCLUDE_RULES=cgi-bin/**" >> $GITHUB_OUTPUT
+          fi
+      - name: Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: ${{ steps.set_vars.outputs.DEPLOY_PATH }}
+          clean: true
+          exclude: ${{ steps.set_vars.outputs.EXCLUDE_RULES }}

@@ -1,14 +1,26 @@
 "use client";
 
 import React from "react";
-import { Row, Col, Typography, Button, Space } from "antd";
-import { RightOutlined } from "@ant-design/icons";
+import { Row, Col, Typography, Button, Space, Grid } from "antd";
 
 const { Title, Paragraph } = Typography;
+const { useBreakpoint } = Grid;
 
 const CareerSection: React.FC = () => {
+  const screens = useBreakpoint();
+
+  const containerPadding = screens.lg
+    ? "60px 50px"
+    : screens.md
+    ? "50px 40px"
+    : "40px 20px";
+  const titleSize = screens.lg ? 48 : screens.sm ? 36 : 28;
+  const textSize = screens.lg ? 19.2 : screens.sm ? 17 : 16;
+  const buttonSize = screens.lg ? "large" : "middle";
+  const buttonBlock = !screens.sm;
+
   return (
-    <div style={{ background: "#ffffff", padding: "60px 50px" }}>
+    <div style={{ background: "#ffffff", padding: containerPadding }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <Row gutter={[48, 48]} align="middle">
           <Col xs={24} lg={14}>
@@ -17,8 +29,8 @@ const CareerSection: React.FC = () => {
                 level={2}
                 style={{
                   color: "#4479d9",
-                  marginBottom: "24px",
-                  fontSize: "48px",
+                  fontSize: `${titleSize}px`,
+                  marginBottom: screens.lg ? "24px" : "16px",
                   fontWeight: 700,
                   fontFamily: '"Montserrat", sans-serif',
                   textTransform: "uppercase",
@@ -29,10 +41,10 @@ const CareerSection: React.FC = () => {
               </Title>
               <Paragraph
                 style={{
-                  fontSize: "19.2px",
+                  fontSize: `${textSize}px`,
                   color: "#232323",
                   lineHeight: 1.5,
-                  marginBottom: "32px",
+                  marginBottom: screens.lg ? "32px" : "24px",
                   fontFamily: '"Roboto", sans-serif',
                 }}
               >
@@ -41,12 +53,15 @@ const CareerSection: React.FC = () => {
                 Universidad Nacional de La Plata (UNLP).
               </Paragraph>
               <Button
-                size="large"
-                href="#inscripciones"
+                type="primary"
+                size={buttonSize}
+                block={buttonBlock}
+                href="/ISFT-CARRERA.pdf"
+                target="_blank"
                 style={{
-                  width: "274px",
+                  minWidth: buttonBlock ? undefined : "280px",
                   height: "48px",
-                  fontSize: "16px",
+                  fontSize: screens.lg ? "16px" : screens.sm ? "15px" : "14px",
                   fontWeight: 600,
                   fontFamily: '"Montserrat", sans-serif',
                   background: "#ff4d00",

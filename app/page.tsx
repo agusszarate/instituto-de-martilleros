@@ -4,12 +4,10 @@ import React from "react";
 import { Typography, Space, Row, Col, Button } from "antd";
 import MainLayout from "@/components/Layout/MainLayout";
 import ValuesSection from "@/components/Sections/ValuesSection";
-import RepresentativesSection from "@/components/Sections/RepresentativesSection";
 import CareerSection from "@/components/Sections/CareerSection";
 import CampusSection from "@/components/Sections/CampusSection";
-import InscriptionsSection from "@/components/Sections/InscriptionsSection";
 import JobBoardSection from "@/components/Sections/JobBoardSection";
-import ContactSection from "@/components/Sections/ContactSection";
+import InscriptionFormSection from "@/components/Sections/InscriptionFormSection";
 
 const { Title, Paragraph } = Typography;
 
@@ -77,11 +75,27 @@ export default function Home() {
                 >
                   Colegio de Martilleros y Corredores Públicos
                   <br />
-                  Departamento Judicial La Plata.
+                  Departamento Judicial{" "}
+                  <span style={{ whiteSpace: "nowrap" }}>La Plata.</span>
                 </Paragraph>
                 <Button
                   size="large"
-                  href="https://isftmartilleroslp.edu.ar/assets/files/Planilla-deInscripcin2023.docx"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.querySelector("#contacto");
+                    if (target) {
+                      const headerOffset = 80;
+                      const elementPosition =
+                        target.getBoundingClientRect().top;
+                      const offsetPosition =
+                        elementPosition + window.pageYOffset - headerOffset;
+
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
                   style={{
                     width: "217px",
                     height: "48px",
@@ -95,6 +109,7 @@ export default function Home() {
                     borderRadius: "4px",
                     boxShadow: "0 2px 2px 0 rgba(0, 0, 0, 0.2)",
                     transition: "all 0.3s ease",
+                    cursor: "pointer",
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = "#a83300";
@@ -105,7 +120,7 @@ export default function Home() {
                     e.currentTarget.style.borderColor = "#ff4d00";
                   }}
                 >
-                  INSCRIPCIONES 2026
+                  INSCRIPCIONES
                 </Button>
               </Space>
             </Col>
@@ -135,8 +150,6 @@ export default function Home() {
             NOSOTROS
           </Title>
           <ValuesSection />
-          <div style={{ margin: "60px 0 40px" }} />
-          <RepresentativesSection />
         </div>
       </section>
 
@@ -150,19 +163,14 @@ export default function Home() {
         <CampusSection />
       </section>
 
-      {/* Inscripciones Section */}
-      <section id="inscripciones">
-        <InscriptionsSection />
-      </section>
-
       {/* Bolsa de Trabajo Section */}
       <section>
         <JobBoardSection />
       </section>
 
-      {/* Contacto Section */}
+      {/* Inscription Form Section */}
       <section id="contacto">
-        <ContactSection />
+        <InscriptionFormSection />
       </section>
 
       {/* Redes Sociales Section */}
@@ -185,7 +193,7 @@ export default function Home() {
               lineHeight: 1.5,
             }}
           >
-            Estemos en contacto en nuestras redes sociales
+            Estemos en contacto - inscripciones@isftmartilleroslp.edu.ar
           </Title>
         </div>
       </section>
