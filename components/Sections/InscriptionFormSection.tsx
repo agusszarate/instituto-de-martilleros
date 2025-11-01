@@ -1,14 +1,27 @@
 "use client";
 
 import React from "react";
-import { Row, Col, Typography, Button, Space } from "antd";
+import { Row, Col, Typography, Button, Space, Grid } from "antd";
 import { DownloadOutlined } from "@ant-design/icons";
 
 const { Title, Paragraph } = Typography;
+const { useBreakpoint } = Grid;
 
 const InscriptionFormSection: React.FC = () => {
+  const screens = useBreakpoint();
+
+  const containerPadding = screens.lg
+    ? "60px 50px"
+    : screens.md
+    ? "50px 40px"
+    : "40px 20px";
+  const titleSize = screens.lg ? 48 : screens.sm ? 40 : 32;
+  const textSize = screens.lg ? 19.2 : screens.sm ? 17 : 16;
+  const buttonSize = screens.lg ? "large" : screens.sm ? "middle" : "middle";
+  const buttonBlock = !screens.sm;
+
   return (
-    <div style={{ background: "#f8f9fa", padding: "60px 50px" }}>
+    <div style={{ background: "#f8f9fa", padding: containerPadding }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <Row justify="center">
           <Col xs={24} md={18} lg={14} xl={12}>
@@ -22,8 +35,8 @@ const InscriptionFormSection: React.FC = () => {
                 style={{
                   color: "#4479d9",
                   textAlign: "center",
-                  marginBottom: "24px",
-                  fontSize: "48px",
+                  fontSize: `${titleSize}px`,
+                  marginBottom: screens.lg ? "24px" : "16px",
                   fontWeight: 700,
                   fontFamily: '"Montserrat", sans-serif',
                   textTransform: "uppercase",
@@ -36,13 +49,14 @@ const InscriptionFormSection: React.FC = () => {
               <Paragraph
                 style={{
                   color: "#232323",
-                  fontSize: "19.2px",
-                  lineHeight: 1.8,
+                  fontSize: `${textSize}px`,
+                  lineHeight: 1.7,
+                  marginBottom: screens.lg ? "32px" : "24px",
                   fontFamily: '"Roboto", sans-serif',
-                  marginBottom: "32px",
                 }}
               >
-                Descargá la planilla de inscripción, completala y enviala por email a{" "}
+                Descargá la planilla de inscripción, completala y enviala por
+                email a{" "}
                 <a
                   href="mailto:inscripciones@isftmartilleroslp.edu.ar"
                   style={{
@@ -65,16 +79,17 @@ const InscriptionFormSection: React.FC = () => {
               </Paragraph>
 
               <Button
-                size="large"
+                type="primary"
+                size={buttonSize}
+                block={buttonBlock}
                 icon={<DownloadOutlined />}
                 href="/Planilla de Inscripción  V102025.docx"
                 download
                 style={{
-                  height: "56px",
-                  fontSize: "16px",
+                  minWidth: buttonBlock ? undefined : "280px",
+                  height: screens.lg ? "56px" : "48px",
+                  fontSize: screens.lg ? "16px" : screens.sm ? "15px" : "14px",
                   fontWeight: 600,
-                  paddingLeft: "32px",
-                  paddingRight: "32px",
                   background: "#4479d9",
                   borderColor: "#4479d9",
                   color: "#ffffff",
@@ -87,13 +102,15 @@ const InscriptionFormSection: React.FC = () => {
                   e.currentTarget.style.background = "#3367c2";
                   e.currentTarget.style.borderColor = "#3367c2";
                   e.currentTarget.style.transform = "translateY(-2px)";
-                  e.currentTarget.style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.3)";
+                  e.currentTarget.style.boxShadow =
+                    "0 4px 8px 0 rgba(0, 0, 0, 0.3)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = "#4479d9";
                   e.currentTarget.style.borderColor = "#4479d9";
                   e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 2px 4px 0 rgba(0, 0, 0, 0.2)";
+                  e.currentTarget.style.boxShadow =
+                    "0 2px 4px 0 rgba(0, 0, 0, 0.2)";
                 }}
               >
                 DESCARGAR PLANILLA DE INSCRIPCIÓN
