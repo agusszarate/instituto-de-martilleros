@@ -21,6 +21,16 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <AntLayout style={{ minHeight: "100vh", background: "#ffffff" }}>
+      <style jsx global>{`
+        @media (max-width: 991px) {
+          .header-title {
+            display: none !important;
+          }
+          .header-logo-link {
+            justify-content: center !important;
+          }
+        }
+      `}</style>
       {/* Header */}
       <AntHeader
         style={{
@@ -38,7 +48,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
         <Row
           justify="space-between"
           align="middle"
-          style={{ height: "100%", padding: "0 20px" }}
+          style={{ height: "100%", padding: "0 50px" }}
         >
           <Col xs={24} sm={24} md={12} lg={7}>
             <a
@@ -47,20 +57,21 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
+              className="header-logo-link"
               style={{
                 textDecoration: "none",
                 display: "flex",
                 alignItems: "center",
                 gap: "16px",
                 cursor: "pointer",
-                justifyContent: "center",
+                justifyContent: "flex-start",
               }}
             >
               <img
                 src="/images/logo-instituto-5.png"
                 alt="ISFT"
                 style={{
-                  height: "70px",
+                  height: "80px",
                   width: "auto",
                   flexShrink: 0,
                 }}
@@ -76,8 +87,8 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                   textTransform: "uppercase",
                   lineHeight: 1.5,
                   whiteSpace: "nowrap",
-                  display: "none",
                 }}
+                className="header-title"
               >
                 INSTITUTO SUPERIOR DE FORMACIÓN TÉCNICA
               </Title>
@@ -198,7 +209,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                       lineHeight: 1.6,
                     }}
                   >
-                    Email: inscripciones@isftmartilleroslp.edu.ar
+                    Email: info@isftmartilleroslp.edu.ar
                     <br />
                     WhatsApp:{" "}
                     <a
@@ -222,6 +233,29 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                       }}
                     >
                       221-489-5604
+                    </a>
+                    <br />
+                    Facebook:{" "}
+                    <a
+                      href="https://www.facebook.com/ISFTColegiodemartilleros"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: "#ffffff",
+                        textDecoration: "none",
+                        borderBottom: "1px solid transparent",
+                        transition: "border-bottom 0.2s ease",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderBottom =
+                          "1px solid #ffffff";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderBottom =
+                          "1px solid transparent";
+                      }}
+                    >
+                      ISFT Colegio de martilleros
                     </a>
                   </Paragraph>
                 </Space>
