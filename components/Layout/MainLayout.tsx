@@ -30,6 +30,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
           padding: "0",
           boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
           borderBottom: "1px solid #efefef",
+          height: "100px",
         }}
       >
         <Row
@@ -112,7 +113,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                 background: "transparent",
                 borderBottom: "none",
                 justifyContent: "flex-end",
-                lineHeight: "90px",
+                lineHeight: "100px",
               }}
             />
           </Col>
@@ -120,7 +121,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
       </AntHeader>
 
       {/* Content */}
-      <Content style={{ marginTop: "80px" }}>{children}</Content>
+      <Content style={{ marginTop: "100px" }}>{children}</Content>
 
       {/* Footer */}
       <AntFooter style={{ background: "#4479d9" }}>
@@ -202,10 +203,12 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                         transition: "border-bottom 0.2s ease",
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.borderBottom = "1px solid #ffffff";
+                        e.currentTarget.style.borderBottom =
+                          "1px solid #ffffff";
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.borderBottom = "1px solid transparent";
+                        e.currentTarget.style.borderBottom =
+                          "1px solid transparent";
                       }}
                     >
                       221-489-5604
