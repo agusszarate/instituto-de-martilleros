@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://isftmartilleroslp.edu.ar/sitemap.xml
