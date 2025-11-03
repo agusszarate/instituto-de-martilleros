@@ -47,6 +47,7 @@ jobs:
             ${{ steps.set_vars.outputs.EXCLUDE_RULES }}
             **/.git*
             **/.git*/**
-          dangerous-clean-slate: true
+          state-name: ${{ github.ref == 'refs/heads/main' && '.ftp-deploy-sync-state-prod.json' || '.ftp-deploy-sync-state-uat.json' }}
+          dry-run: false
           timeout: 300000
           log-level: verbose
