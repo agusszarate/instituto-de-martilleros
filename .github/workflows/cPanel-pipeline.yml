@@ -35,19 +35,41 @@ jobs:
             echo "DEPLOY_PATH=./preview/" >> $GITHUB_OUTPUT
             echo "EXCLUDE_RULES=cgi-bin/**" >> $GITHUB_OUTPUT
           fi
-      - name: Deploy to cPanel via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy to cPanel via FTP (Attempt 1)
+        id: deploy_attempt_1
+        continue-on-error: true
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
           server-dir: ${{ steps.set_vars.outputs.DEPLOY_PATH }}
-          exclude: |
-            ${{ steps.set_vars.outputs.EXCLUDE_RULES }}
-            **/.git*
-            **/.git*/**
+          exclude: ${{ steps.set_vars.outputs.EXCLUDE_RULES }}
           state-name: ${{ github.ref == 'refs/heads/main' && '.ftp-deploy-sync-state-prod.json' || '.ftp-deploy-sync-state-uat.json' }}
-          dry-run: false
-          timeout: 300000
-          log-level: verbose
+
+      - name: Deploy to cPanel via FTP (Attempt 2 - Retry)
+        id: deploy_attempt_2
+        if: steps.deploy_attempt_1.outcome == 'failure'
+        continue-on-error: true
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: ${{ steps.set_vars.outputs.DEPLOY_PATH }}
+          exclude: ${{ steps.set_vars.outputs.EXCLUDE_RULES }}
+          state-name: ${{ github.ref == 'refs/heads/main' && '.ftp-deploy-sync-state-prod.json' || '.ftp-deploy-sync-state-uat.json' }}
+
+      - name: Deploy to cPanel via FTP (Attempt 3 - Final Retry)
+        if: steps.deploy_attempt_1.outcome == 'failure' && steps.deploy_attempt_2.outcome == 'failure'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: ${{ steps.set_vars.outputs.DEPLOY_PATH }}
+          exclude: ${{ steps.set_vars.outputs.EXCLUDE_RULES }}
+          state-name: ${{ github.ref == 'refs/heads/main' && '.ftp-deploy-sync-state-prod.json' || '.ftp-deploy-sync-state-uat.json' }}
