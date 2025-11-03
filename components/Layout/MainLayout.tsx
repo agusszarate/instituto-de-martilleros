@@ -297,14 +297,48 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
         </Row>
 
         <Row
-          justify="center"
+          align="middle"
           style={{
             marginTop: "40px",
             paddingTop: "24px",
             borderTop: "1px solid rgba(255,255,255,0.15)",
+            position: "relative",
           }}
         >
-          <Col xs={24} style={{ textAlign: "center" }}>
+          <Col
+            xs={{ span: 24, order: 2 }}
+            md={{ span: 8, order: 1 }}
+            style={{ textAlign: "center" }}
+          >
+            <Space
+              align="center"
+              size="middle"
+              style={{ justifyContent: "center" }}
+            >
+              <Text
+                style={{
+                  color: "#ffffff",
+                  fontSize: "12px",
+                  fontFamily: '"Open Sans", sans-serif',
+                }}
+              >
+                Consultoría y Procesos
+              </Text>
+              <img
+                src="/images/cas-marca-negativo-300.png"
+                alt="CAS Informática"
+                style={{
+                  height: "35px",
+                  width: "auto",
+                }}
+              />
+            </Space>
+          </Col>
+          <Col
+            xs={{ span: 24, order: 1 }}
+            md={{ span: 8, order: 2 }}
+            style={{ textAlign: "center", marginBottom: "16px" }}
+          >
             <Text
               style={{
                 color: "#ffffff",
@@ -317,6 +351,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
               reservados
             </Text>
           </Col>
+          <Col xs={{ span: 0 }} md={{ span: 8, order: 3 }}></Col>
         </Row>
       </AntFooter>
     </AntLayout>
