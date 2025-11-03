@@ -43,6 +43,10 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
           server-dir: ${{ steps.set_vars.outputs.DEPLOY_PATH }}
-          exclude: ${{ steps.set_vars.outputs.EXCLUDE_RULES }}
+          exclude: |
+            ${{ steps.set_vars.outputs.EXCLUDE_RULES }}
+            **/.git*
+            **/.git*/**
+          dangerous-clean-slate: true
           timeout: 300000
-          log-level: standard
+          log-level: verbose
