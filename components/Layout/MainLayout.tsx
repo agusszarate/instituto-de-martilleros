@@ -30,6 +30,11 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
             justify-content: center !important;
           }
         }
+        @media (min-width: 768px) {
+          .footer-logo-container {
+            justify-content: flex-start !important;
+          }
+        }
       `}</style>
       {/* Header */}
       <AntHeader
@@ -308,31 +313,37 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
           <Col
             xs={{ span: 24, order: 2 }}
             md={{ span: 8, order: 1 }}
-            style={{ textAlign: "center" }}
           >
-            <Space
-              align="center"
-              size="middle"
-              style={{ justifyContent: "center" }}
+            <div style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+            className="footer-logo-container"
             >
-              <Text
-                style={{
-                  color: "#ffffff",
-                  fontSize: "12px",
-                  fontFamily: '"Open Sans", sans-serif',
-                }}
+              <Space
+                align="center"
+                size="small"
               >
-                Consultoría y Procesos
-              </Text>
-              <img
-                src="/images/cas-marca-negativo-300.png"
-                alt="CAS Informática"
-                style={{
-                  height: "35px",
-                  width: "auto",
-                }}
-              />
-            </Space>
+                <Text
+                  style={{
+                    color: "#ffffff",
+                    fontSize: "9px",
+                    fontFamily: '"Open Sans", sans-serif',
+                  }}
+                >
+                  Consultoría y Procesos
+                </Text>
+                <img
+                  src="/images/cas-marca-negativo-300.png"
+                  alt="CAS Informática"
+                  style={{
+                    height: "20px",
+                    width: "auto",
+                  }}
+                />
+              </Space>
+            </div>
           </Col>
           <Col
             xs={{ span: 24, order: 1 }}
