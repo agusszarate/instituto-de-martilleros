@@ -30,7 +30,7 @@ jobs:
         run: |
           if [ "${{ github.ref }}" == "refs/heads/main" ]; then
             echo "DEPLOY_PATH=./" >> $GITHUB_OUTPUT
-            echo "EXCLUDE_RULES=preview.isftmartilleroslp.edu.ar/**,cgi-bin/**" >> $GITHUB_OUTPUT
+            echo "EXCLUDE_RULES=preview/**,cgi-bin/**" >> $GITHUB_OUTPUT
           elif [ "${{ github.ref }}" == "refs/heads/uat" ]; then
             echo "DEPLOY_PATH=./preview/" >> $GITHUB_OUTPUT
             echo "EXCLUDE_RULES=cgi-bin/**" >> $GITHUB_OUTPUT
@@ -43,5 +43,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
           server-dir: ${{ steps.set_vars.outputs.DEPLOY_PATH }}
-          clean: true
           exclude: ${{ steps.set_vars.outputs.EXCLUDE_RULES }}
+          timeout: 300000
+          log-level: standard
