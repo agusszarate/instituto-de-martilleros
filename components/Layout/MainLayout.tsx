@@ -293,7 +293,7 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
                       lineHeight: 1.6,
                     }}
                   >
-                    Lunes a viernes de 8.00 a 12.00 hs y de 18.00 a 20.00 hs
+                    Lunes a viernes de 8.00 a 13.00 hs
                   </Paragraph>
                 </Space>
               </Col>
